@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 var teacherSchema = new mongoose.Schema({
     name: String,
     email: String,
