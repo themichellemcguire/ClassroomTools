@@ -24,13 +24,14 @@ router.get('/', function(req, res, next) {
   req.logout();
   res.redirect('/');
 });
-// GET /home/new to create new students
-// this will be a redirect
+
 
 // GET /home to list all students
 // this will be an index view
 router.get('/home', function(req, res) {
-  res.render("home");
+  res.render("home", {
+    teacher: req.user
+  });
 });
 
 // GET /home/new home.new to provide form for submitting new students to the create action
@@ -40,6 +41,17 @@ router.get('/home/new', function(req, res) {
   res.render('./new')
   
 });
+var student = new Student(req.body);
+  
+router.post('/students', function(req, res) {
+  // do something when the user clicks on the submit button for the form
+  req.body
+})
+student.save(function(err) {
+    if (err) return res.redirect('/students/new');
+    // res.redirect('/movies');
+    res.redirect(`/students/${student._id}`);
+  });
 
 // GET /home/:id/edit home.edit to provide form for editing a post and sending to the update action
 // this will be a redirect
@@ -93,19 +105,3 @@ function home(req, res, next) {
 module.exports = router;
 
 
-// <%- include('./partials/header') %>
-// <body>
-//     <h1>Welcome to the home page!</h1>
-//     <ul class="right">
-//         <li>
-//         <% if (teacher) { %>
-//             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-//         <% } else { %>
-//             <a href="/auth/google"><i class="material-icons left">/i>Login with Google</a>
-//         <% } %>
-//         </li>
-//     </ul>
-//     <form action="/home" method="POST"></form>
-//     <a href="/home/new">Add a Student</a>
-// </body>
-// </html>

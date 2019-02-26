@@ -3,10 +3,10 @@
     <h1>Welcome to the home page!</h1>
     <ul class="right">
         <li>
-        <% if (true) { %>
+        <% if (teacher !== undefined) { %>
             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
         <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">/i>Login with Google</a>
+            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
         </li>
     </ul>
