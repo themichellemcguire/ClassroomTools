@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 // GET /home to list all students
 // this will be an index view
 router.get('/home', function(req, res) {
-  console.log("it's working");
+  res.render("home");
 });
 
 // GET /home/new home.new to provide form for submitting new students to the create action
@@ -91,3 +91,21 @@ function home(req, res, next) {
 // res.render('students/new');
 // }
 module.exports = router;
+
+
+// <%- include('./partials/header') %>
+// <body>
+//     <h1>Welcome to the home page!</h1>
+//     <ul class="right">
+//         <li>
+//         <% if (teacher) { %>
+//             <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+//         <% } else { %>
+//             <a href="/auth/google"><i class="material-icons left">/i>Login with Google</a>
+//         <% } %>
+//         </li>
+//     </ul>
+//     <form action="/home" method="POST"></form>
+//     <a href="/home/new">Add a Student</a>
+// </body>
+// </html>

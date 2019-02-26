@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 var medicalSchema = new mongoose.Schema({
   allergies: { type: Boolean, default: false },
-  text: String
+  allergyDetails: String
 });
 var parentSchema = new mongoose.Schema({
-  name: String,
   mom: { type: Boolean, default: true },
   dad: { type: Boolean, default: false },
   guardian: { type: Boolean, default: false },
+  name: String,
   bestPhoneNumber: Number,
   otherPhoneNumber: Number
   }, {

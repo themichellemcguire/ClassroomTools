@@ -1,11 +1,60 @@
 <%- include('./partials/header') %>
 
-<h1>form goes here</h1>
+<h1>Enter New Student</h1>
 <form action="/new" method="POST">
     <label>First Name:
-        <input type="string" name="firstName">
+        <input type="text" name="firstName">
     </label>
     <label>Last Name:
-    <input type="string" name="lastName">
+        <input type="text" name="lastName">
     </label><br>
+    <label>birthdate:
+        <input type="date" name="birthdate">
+    </label><br>
+    <label>Street Address:
+        <input type="string" name="streetAddress">
+    </label><br>
+    <label>city:
+        <input type="text" name="city">
+    </label><br>
+    <label>State:
+        <input type="text" name="state">
+    </label><br>
+    <label>Zip Code:
+        <input type="text" name="zipCode">
+    </label><br>
+    <hr>
+    <h3>Parent/Guardian Info</h3>
+    <label>Mom
+        <input type="radio" name="parent" checked>
+    </label>
+    <label>Dad
+        <input type="radio" name="parent" unchecked>
+    </label>
+    <label>Guardian
+        <input type="radio" name="parent" unchecked>
+    </label><br>
+    <label>First Name:
+            <input type="text" name="firstName">
+        </label>
+        <label>Last Name:
+            <input type="text" name="lastName">
+        </label><br>
+        <label>Best Phone Number:
+            <input type="tel" name="bestPhoneNumber" placeholder="***-***-****">
+        </label><br>
+        <label>Other Phone Number:
+            <input type="tel" name="otherPhoneNumber" placeholder="***-***-****">
+        </label><br>
+            <input type="submit" value="Add Another">
+        <hr>
+        <h3>Medical Information</h3>
+        <label>Allergies:
+            <input type="checkbox" name="allergies" unchecked>
+        </label><br>
+        <label>Allergy Details:
+            <textarea name="content"></textarea>
+        </label><br>
+        
+        <input type="submit" value="Add Student">
 </form>
