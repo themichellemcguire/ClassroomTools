@@ -32,7 +32,7 @@ passport.serializeUser(function(teacher, done) {
     done(null, teacher.id);
 });
 passport.deserializeUser(function(id, done) {
-    Student.findById(id, function(err, student) {
-      done(err, student);
+    Teacher.findById(id, function(err, teacher) {
+      done(err, teacher);
     });
   });

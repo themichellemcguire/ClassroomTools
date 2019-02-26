@@ -29,10 +29,17 @@ router.get('/', function(req, res, next) {
 
 // GET /home to list all students
 // this will be an index view
-
+router.get('/home', function(req, res) {
+  console.log("it's working");
+});
 
 // GET /home/new home.new to provide form for submitting new students to the create action
 // this will be a redirect
+router.get('/home/new', function(req, res) {
+  console.log("new form");
+  res.render('./new')
+  
+});
 
 // GET /home/:id/edit home.edit to provide form for editing a post and sending to the update action
 // this will be a redirect

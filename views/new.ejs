@@ -1,1 +1,11 @@
-<%- include('../partials/header') %>
+<%- include('./partials/header') %>
+
+<h1>form goes here</h1>
+<form action="/new" method="POST">
+    <label>First Name:
+        <input type="string" name="firstName">
+    </label>
+    <label>Last Name:
+    <input type="string" name="lastName">
+    </label><br>
+</form>
