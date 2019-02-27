@@ -8,6 +8,7 @@ var parentSchema = new mongoose.Schema({
   mom: { type: Boolean, default: true },
   dad: { type: Boolean, default: false },
   guardian: { type: Boolean, default: false },
+  parentname: String,
   name: String,
   bestPhoneNumber: Number,
   otherPhoneNumber: Number
