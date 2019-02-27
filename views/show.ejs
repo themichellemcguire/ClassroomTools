@@ -1,9 +1,17 @@
-
-  <div>First: </div>
+<%- include('./partials/header') %>
+<h3>Students</h3>
   <div><%= student.lastName %></div>
   <div><%= student.birthdate %></div>
   <div><%= student.streetAddress %></div>
   <div><%= student.city %></div>
   <div><%= student.state %></div>
   <div><%= student.zipCode %></div>
+  <br>
+  <hr>
+  <h3>Parent Info</h3>
   <div><%= student.parentInfo %></div>
+  <br>
+  <hr>
+  <h3>Medical Info</h3>
+  <div><%= student.MedicalInfo %></div>
+  <br>
