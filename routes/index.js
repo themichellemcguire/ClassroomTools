@@ -41,17 +41,30 @@ router.get('/home/new', function(req, res) {
   res.render('./new')
   
 });
-var student = new Student(req.body);
-  
 router.post('/students', function(req, res) {
-  // do something when the user clicks on the submit button for the form
-  req.body
-})
-student.save(function(err) {
-    if (err) return res.redirect('/students/new');
-    // res.redirect('/movies');
-    res.redirect(`/students/${student._id}`);
-  });
+  Student.create(req.body, function(err,student){
+      if (err){
+        res.redirect('/home')
+      }else{
+        res.redirect('/home');
+        console.log(student);
+      } 
+     }) 
+   });
+   router.get('/students/:id', function(req, res) {
+    Student.findById(req.params.id, function(err, student){
+        if (err) res.redirect('/home')
+        console.log( student)
+         res.render('show', {student})
+       }) 
+     });
+  
+// router.post('/students', function(req, res) {
+  // Ask Mongoose to create a new student
+ // If Mongoose fails to create a new student, we need to redirect to the same page with the form
+  // If Mongoose succeeds, we need to redirect to a page to display all the students
+  // });
+
 
 // GET /home/:id/edit home.edit to provide form for editing a post and sending to the update action
 // this will be a redirect

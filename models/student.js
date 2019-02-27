@@ -16,6 +16,7 @@ var parentSchema = new mongoose.Schema({
 });
 var studentSchema = new mongoose.Schema({
   name: String,
+  lastName: String,
   birthdate: Date,
   streetAddress: String,
   city: String,

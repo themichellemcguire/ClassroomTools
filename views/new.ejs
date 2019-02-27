@@ -3,7 +3,7 @@
 <h1>Enter New Student</h1>
 <form action="/students" method="POST">
     <label>First Name:
-        <input type="text" name="firstName">
+        <input type="text" name="name">
     </label>
     <label>Last Name:
         <input type="text" name="lastName">
@@ -22,39 +22,43 @@
     </label><br>
     <label>Zip Code:
         <input type="text" name="zipCode">
-    </label><br>
+    </label>
+</form>
     <hr>
+<form>
     <h3>Parent/Guardian Info</h3>
     <label>Mom
-        <input type="radio" name="parent" checked>
+        <input type="radio" name="name" checked>
     </label>
     <label>Dad
-        <input type="radio" name="parent" unchecked>
+        <input type="radio" name="name" unchecked>
     </label>
     <label>Guardian
-        <input type="radio" name="parent" unchecked>
+        <input type="radio" name="name" unchecked>
     </label><br>
     <label>First Name:
-            <input type="text" name="firstName">
-        </label>
-        <label>Last Name:
-            <input type="text" name="lastName">
-        </label><br>
-        <label>Best Phone Number:
-            <input type="tel" name="bestPhoneNumber" placeholder="***-***-****">
-        </label><br>
-        <label>Other Phone Number:
-            <input type="tel" name="otherPhoneNumber" placeholder="***-***-****">
-        </label><br>
-            <input type="submit" value="Add Another">
-        <hr>
-        <h3>Medical Information</h3>
-        <label>Allergies:
-            <input type="checkbox" name="allergies" unchecked>
-        </label><br>
-        <label>Allergy Details:
-            <textarea name="content"></textarea>
-        </label><br>
-        
-        <input type="submit" value="Save">
+        <input type="text" name="firstName">
+    </label>
+    <label>Last Name:
+        <input type="text" name="lastName">
+    </label><br>
+    <label>Best Phone Number:
+        <input type="tel" name="bestPhoneNumber" placeholder="***-***-****">
+    </label><br>
+    <label>Other Phone Number:
+        <input type="tel" name="otherPhoneNumber" placeholder="***-***-****">
+    </label><br>
+        <input type="submit" value="Add Another">
+</form>
+    <hr>
+<form>
+    <h3>Medical Information</h3>
+    <label>Allergies:
+        <input type="checkbox" name="allergies" unchecked>
+    </label><br>
+    <label>Allergy Details:
+        <textarea name="content"></textarea>
+    </label><br>
+    
+    <input type="submit" value="Save">
 </form>
