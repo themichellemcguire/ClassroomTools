@@ -1,5 +1,7 @@
 <%- include('./partials/header') %>
+
 <h3>Students</h3>
+  <div><%= student.name %></div>
   <div><%= student.lastName %></div>
   <div><%= student.birthdate %></div>
   <div><%= student.streetAddress %></div>
@@ -15,8 +17,3 @@
   <h3>Medical Info</h3>
   <div><%= student.MedicalInfo %></div>
   <br>
-
-DATABASE_URL=mongodb+srv://themichellemcguire:s-B-Vw-DfQ6xkHV@cluster0-vdq9s.mongodb.net/ClassroomTools
-GOOGLE_CLIENT_ID=760972111646-epqfr0pmbel5onsuqet018cm9jp5ftia.apps.googleusercontent.com
-GOOGLE_SECRET=4SIFO5O6McGS4YDF0JtdPDXR
-GOOGLE_CALLBACK=http://localhost:3000/oauth2callback

@@ -58,7 +58,39 @@ router.post('/students', function(req, res) {
          res.render('show', {student})
        }) 
      });
-  
+  //    router.delete('/:id', function(req, res){
+  //     console.log(req.params.id, 'Id in the delete route')
+  //     Student.findByIdAndRemove(req.params.id, function(error, deletedStudent){
+  //         if(error){
+  //             console.log(error)
+  //         } else {
+  //             console.log(deletedStudent, 'This Student was deleted')
+  //             res.redirect('/home')
+  //         }
+  //     })
+  // })
+     var Teacher = require('../models/teacher');
+     var Student = require('../models/student');
+     
+     function home(req, res, next) {
+       console.log(req.query)
+       // Make the query object to use with Teacher.find based up
+       // the user has submitted the search form or now
+       let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+       // Default to sorting by name
+       let sortKey = req.query.sort || 'name';
+       Teacher.find(modelQuery)
+       .sort(sortKey).exec(function(err, teachers) {
+         if (err) return next(err);
+         // Passing search values, name & sortKey, for use in the EJS
+         res.render('home', { teacher, name: req.query.name, sortKey, user: req.user });
+       });
+     };
+      // Insert this middleware for routes that require a logged in user
+      function isLoggedIn(req, res, next) {
+       if ( req.isAuthenticated() ) return next();
+       res.redirect('/auth/google');
+     };
 // router.post('/students', function(req, res) {
   // Ask Mongoose to create a new student
  // If Mongoose fails to create a new student, we need to redirect to the same page with the form

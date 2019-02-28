@@ -9,9 +9,16 @@
             <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
         <% } %>
         </li>
+
     </ul>
     <form action="/home" method="POST"></form>
     <a href="/home/new">Add a Student</a>
+    
+    <% for(let i = 0; i < students.length; i++){%>
+    <a href="/home/<%= students._id %>"><%= students.name %></a> 
+
+    <form action="/home/<%= students._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Remove" />
 </body>
 </html>
 
