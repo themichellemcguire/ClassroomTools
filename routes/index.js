@@ -29,9 +29,12 @@ router.get('/', function(req, res, next) {
 // GET /home to list all students
 // this will be an index view
 router.get('/home', function(req, res) {
-  res.render("home", {
-    teacher: req.user
-  });
+  Student.find({}, function(err, students) {
+    res.render("home", {
+      teacher: req.user,
+      students: students
+    });
+  })
 });
 
 // GET /home/new home.new to provide form for submitting new students to the create action
@@ -58,7 +61,8 @@ Student.findById(req.params.id, function(err, student){
       res.render('show', {student})
     }) 
   });
-router.delete('/:id', function(req, res){
+
+router.delete('/home/:id', function(req, res){
 console.log(req.params.id, 'Id in the delete route')
 Student.findByIdAndRemove(req.params.id, function(error, deletedStudent){
     if(error){

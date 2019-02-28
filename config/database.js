@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://themichellemcguire:s-B-Vw-DfQ6xkHV@cluster0-vdq9s.mongodb.net/ClassroomTools?retryWrites=true', process.env.DATABASE_URL,
+mongoose.connect('mongodb+srv://themichellemcguire:s-B-Vw-DfQ6xkHV@cluster0-vdq9s.mongodb.net/ClassroomTools?retryWrites=true',
     {useNewUrlParser: true}
     );
 
