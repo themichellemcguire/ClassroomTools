@@ -1,5 +1,6 @@
 # E-ClassroomTools
-https://e-classroomtools.herokuapp.com/
+My Trello board: https://trello.com/b/WycacutU/e-classroom-tools
+Deployed app: https://e-classroomtools.herokuapp.com/
 
 ![](https://i.imgur.com/OFcKcou.jpg)
 ![](https://i.imgur.com/WwcSVDw.jpg)
