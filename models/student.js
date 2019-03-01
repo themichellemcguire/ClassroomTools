@@ -12,9 +12,7 @@ var parentSchema = new mongoose.Schema({
   name: String,
   bestPhoneNumber: Number,
   otherPhoneNumber: Number
-  }, {
-    timestamps: true
-});
+  }); 
 var studentSchema = new mongoose.Schema({
   name: String,
   lastName: String,
@@ -23,8 +21,8 @@ var studentSchema = new mongoose.Schema({
   city: String,
   state: String,
   zipCode: Number,
-  parentInfo: [parentSchema],
-  medicalInfo: [medicalSchema]
+  // parentInfo: [parentSchema],
+  // medicalInfo: [medicalSchema]
 });
 
 

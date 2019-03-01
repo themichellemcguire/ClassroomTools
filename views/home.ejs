@@ -1,17 +1,8 @@
 <%- include('./partials/header') %>
 <body>
-    <h1>Welcome to the home page!</h1>
-    <ul class="right">
-        <li>
-        <% if (teacher !== undefined) { %>
-            <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-        <% } else { %>
-            <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-        <% } %>
-        </li>
+    <h1>Welcome to your classroom!</h1>
 
-    </ul>
-    
+    <wrapper>
     <% for(let i = 0; i < students.length; i++){%>
    <p><a href="/home/<%= students[i]._id %>"><%= students[i].name + " " + students[i].lastName%></a> </p>
 
@@ -23,6 +14,7 @@
         <input type="submit" value="Remove" />
     </form>
    <% } %>
+</wrapper>
 </body>
 </html>
 

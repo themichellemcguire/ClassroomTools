@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>E-Classroom Tools</title>
 </head>
 <body>
     <nav>
-        <a href="/home">Home</a>
-        <form action="/home" method="POST"></form>
+        <form action="/home" method="POST">
+            <a href="/home/">Home</a>
+        </form>
+        <form action="/home" method="POST">
         <a href="/home/new">Add a Student</a>
+        <ul class="right">
+            <li>
+            <% if (teacher !== undefined) { %>
+                <a href="/logout"><i class="material-icons left"></i>Log Out</a>
+            <% } else { %>
+                <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
+            <% } %>
+            </li>
+        </ul>
+    </form>
     </nav>
-    <main>
+    <hr>

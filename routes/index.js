@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+var Teacher = require('../models/teacher');
+var Student = require('../models/student');
+
 /* GET login page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'E-Classroom Tools' });
@@ -67,9 +70,20 @@ router.put('/edit/:id', function(req, res){
   console.log(req.body, "This is updated information of the student")
   Student.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(error, updatedStudent){
       console.log(updatedStudent, " This is the updated student")
-      res.redirect('/home')
+      res.redirect('/edit')
   }) 
 }); 
+function updateStudent(req, res) {
+  console.log(req.body, 'this is the update path')
+  console.log(req.params.id)
+  Student.findByIdAndUpdate(req.params.id, req.body, function(err, student){
+        student.updated_at = Date.now();
+        student.save( function ( err, student){
+        });
+        res.redirect( '/home' + req.params.id);
+      });
+  
+}
 
 router.delete('/home/:id', function(req, res){
 console.log(req.params.id, 'Id in the delete route')
@@ -82,8 +96,6 @@ Student.findByIdAndRemove(req.params.id, function(error, deletedStudent){
     }
   })
 })
-var Teacher = require('../models/teacher');
-var Student = require('../models/student');
      
 function home(req, res, next) {
   console.log(req.query)
@@ -104,39 +116,7 @@ function home(req, res, next) {
        if ( req.isAuthenticated() ) return next();
        res.redirect('/auth/google');
      };
-// router.post('/students', function(req, res) {
-  // Ask Mongoose to create a new student
- // If Mongoose fails to create a new student, we need to redirect to the same page with the form
-  // If Mongoose succeeds, we need to redirect to a page to display all the students
-  // });
 
-
-// GET /home/:id/edit home.edit to provide form for editing a post and sending to the update action
-// this will be a redirect
-
-// DELETE /students/:id
-
-
-
-
-// router.get('/home', function(req,res) {
-  // we should have access to logged in user via req.user
-  // req.user contains a user ID we can use to find inside mogodb
-  // query mongoose for a teacher based on who is logged in
-  // once teacher is found, we need to populate template with teacher data
-
-  // res.render('home')
-// });
-
-// module.exports = {
-//     home,
-//     // new: newStudent
-// };
-
-
-// function newStudent(req, res) {
-// res.render('students/new');
-// }
 module.exports = router;
 
 
