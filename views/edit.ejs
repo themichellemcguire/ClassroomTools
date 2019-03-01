@@ -1,0 +1,11 @@
+<%- include('./partials/header') %>
+<body>
+    <h1>Edit Student Info</h1>
+<form action="/home/<%= foundStudent._id %>?_method=PUT" method="POST">
+    <input type="text" name="First Name" value="<%= foundStudent.name %>"/>
+    <input type="text" name="Last Name" value="<%= foundStudent.lastName %>"/>
+
+    <input type="submit" value="Save"/>
+</form>
+
+<%- include('./partials/footer') %>

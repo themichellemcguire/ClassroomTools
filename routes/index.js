@@ -62,6 +62,15 @@ Student.findById(req.params.id, function(err, student){
     }) 
   });
 
+router.put('/edit/:id', function(req, res){
+  console.log(req.params.id, "This is the Id of the student we're updating")
+  console.log(req.body, "This is updated information of the student")
+  Student.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(error, updatedStudent){
+      console.log(updatedStudent, " This is the updated student")
+      res.redirect('/home')
+  }) 
+}); 
+
 router.delete('/home/:id', function(req, res){
 console.log(req.params.id, 'Id in the delete route')
 Student.findByIdAndRemove(req.params.id, function(error, deletedStudent){
