@@ -7,7 +7,7 @@
 <p>Further into the future, teachers will be able to share their documentation with parents in an easy to read document. This information will be part of the students' records so the next teachers will know what the student is working on.
 <p>My Trello board: https://trello.com/b/WycacutU/e-classroom-tools </p>
 <br>
-*Challenges*: 
+#Challenges: 
 <br>My .env file kept including itself when being pushed to heroku <br>
 Creating working routes<br>
 Having my embedded schemas show on my details page.<br>
